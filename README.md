@@ -149,8 +149,8 @@ SneakPeek/
 ## 📧 Contact  
 
 For more information or collaboration inquiries, reach out to:  
-**[Mohamed Elsayed](https://github.com/mohamedelsayed10)**
-**[Manar Ramadan](https://github.com/manarbshr)**
+**[Mohamed Elsayed](https://www.linkedin.com/in/mohamed-elsayed-319a24204/)**
+**[Manar Ramadan](https://www.linkedin.com/in/manar-ramadan-60a613216/)**
 
 
  
