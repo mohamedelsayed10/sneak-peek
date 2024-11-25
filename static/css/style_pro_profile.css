@@ -54,9 +54,7 @@ nav a:hover {
     margin: 30px auto;
     margin-left: 18%; /* Align left border with the  header */
     padding: 25px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.7); /* White background with opacity */
     z-index: 10; /* Ensures form elements are on top */
     position: relative; /* Position relative to interact with z-index */
 }
@@ -261,7 +259,7 @@ button:hover {
 
     
     .navbar-brand img {
-    width: 30px;
+    width: 50px;
     margin-right: 10px;
     }
     
@@ -271,9 +269,10 @@ button:hover {
     color: #ffffff;
     margin-top: 5px;
     text-decoration: none;
-    
+    font-family: 'American Typewriter', sans-serif;
     
     }
+    
     .header_section {
            position: fixed;
            top: 0;
@@ -293,3 +292,36 @@ button:hover {
     background: linear-gradient(to right, #51b5ef, #436bf1)  ;
     z-index: 0; /* Background gradient */
     }
+
+
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    .fade-in {
+        animation: fadeIn 2s ease-out;
+    }
+    
+
+    @keyframes revealText {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    
+    .reveal-text {
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
+        animation: revealText 2s steps(30) forwards;
+    }
+    

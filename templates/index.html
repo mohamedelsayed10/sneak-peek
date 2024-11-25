@@ -17,6 +17,9 @@
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet">
+
+
 
     <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
@@ -40,7 +43,7 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container">
           <a class="navbar-brand" href="/">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt=""/>
 
             <span>
               SneakPeek
@@ -57,8 +60,8 @@
             </div>
             <div id="myNav" class="overlay">
               <div class="overlay-content">
-                <a href="index.html">HOME</a>
-                <a href="about.html">ABOUT</a>
+                <a href="/">HOME</a>
+                <a href="#about">ABOUT</a>
                 <a href="contact.html">Contact Us</a>
               </div>
             </div>
@@ -143,8 +146,7 @@
                 Peek
               </h1>
               <p>
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                alteration in some form, by injected humour, or randomised words
+                Smart AI Tools to Track Focus, Prevent Cheating, and Build Trust.
               </p>
 
               <div class="btn-box">
@@ -167,7 +169,7 @@
 <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="text-center">
-            <h6 class="section-title bg-white text-center text-primary px-3">Features</h6>
+            <h6 class="section-title bg-white text-center text-primary px-3" id="about">Features</h6>
             <h1 class="mb-5">Our Detection Capabilities</h1>
         </div>
         <div class="owl-carousel testimonial-carousel position-relative">
@@ -180,23 +182,23 @@
             </div>
             <div class="testimonial-item text-center">
                 <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/Eye icon.gif') }}"" style="width: 80px; height: 80px;">
-                <h5 class="mb-0">Eye Detection</h5>
+                <h5 class="mb-0">Gaze Tracking</h5>
                 <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tracks eye movement to detect focus levels and potential distractions.</p>
+                    <p class="mb-0">Monitor gaze direction to detect focus and prevent distractions during critical tasks.</p>
                 </div>
             </div>
             <div class="testimonial-item text-center">
                 <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/Voice recognition free vector icons designed by monkik.jfif') }}" style="width: 80px; height: 80px;">
-                <h5 class="mb-0">Sound Detection</h5>
+                <h5 class="mb-0">Lips Movement Analysis</h5>
                 <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Listens for any sounds, identifying talking or other suspicious noises.</p>
+                    <p class="mb-0">Detect lip movements for improved communication insights or real-time monitoring.</p>
                 </div>
             </div>
             <div class="testimonial-item text-center">
                 <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/Face recognition icon.jfif') }}" style="width: 80px; height: 80px;">
-                <h5 class="mb-0">Face Detection</h5>
+                <h5 class="mb-0">Face Detection and Verification</h5>
                 <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Confirms identity and ensures only authorized users are present during exams.</p>
+                    <p class="mb-0">Ensure security with advanced face detection and verification, matching users' identities seamlessly.</p>
                 </div>
             </div>
             <div class="testimonial-item text-center">
@@ -207,32 +209,38 @@
                 </div>
                 
             </div>
-            <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/Voice recognition free vector icons designed by monkik.jfif') }}" style="width: 80px; height: 80px;">
-                <h5 class="mb-0">Voice Detection</h5>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Detects and records any talking to capture unauthorized collaboration.</p>
-                </div>
-                
-            </div>
-
-            <div class="testimonial-item text-center">
-                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/Voice recognition free vector icons designed by monkik.jfif') }}" style="width: 80px; height: 80px;">
-                <h5 class="mb-0">Voice Detection</h5>
-                <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Detects and records any talking to capture unauthorized collaboration.</p>
-                </div>
-                
-            </div>
+            
 
 
         </div>
     </div>
 </div>
 <!-- Testimonial End -->
-
+<!-- Footer Start -->
+<footer class="footer_section mt-5" style="background-color: #f8f9fa; padding: 20px 0;">
+  <div class="container text-center">
+    <div class="footer_social">
+      <a href="https://github.com/mohamedelsayed10/sneak-peek" target="_blank" style="margin: 0 10px; text-decoration: none; color: #333;">
+        <i class="fab fa-github" style="font-size: 24px;"></i> SneakPeek
+      </a>
+      <a href="https://www.linkedin.com/in/manar-ramadan-60a613216/" target="_blank" style="margin: 0 10px; text-decoration: none; color: #0077b5;">
+        <i class="fab fa-linkedin" style="font-size: 24px;"></i> Manar Bshr
+      </a>
+      <a href="https://www.linkedin.com/in/mohamed-elsayed-319a24204/" target="_blank" style="margin: 0 10px; text-decoration: none; color: #0077b5;">
+        <i class="fab fa-linkedin" style="font-size: 24px;"></i> Mohamed Elsayed
+      </a>
+    </div>
+    <p class="mt-3" style="color: #555;">© 2024 SneakPeek. All Rights Reserved.</p>
   </div>
 
+</footer>
+
+<!-- Footer End -->
+
+  </div>
+  
+<!-- Include Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
@@ -251,6 +259,7 @@
     margin: 35,
     navText: [],
     autoplay: true,
+    autoplayTimeout: 2000, // Adjust the time interval (in milliseconds)
     autoplayHoverPause: true,
     responsive: {
       0: {
@@ -265,6 +274,7 @@
     }
   });
 </script>
+
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

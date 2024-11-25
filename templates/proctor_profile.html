@@ -15,10 +15,11 @@
 </head>
 <body>
 
+
   <div class="hero_area">
     <!-- header section starts -->
     <header class="header_section">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="/">
             <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
 
             <span>
@@ -64,13 +65,13 @@
                   <div class="row">
                     <div class="col-12">
                       <div class="count-area-content percentage">
-                        <div class="count-digit">{{num_exams}}</div>
+                        <div class="count-digit" data-target="{{num_exams}}">0</div>
                         <div class="count-title">Total Exams Conducted</div>
                       </div>
                     </div>
                     <div class="col-12">
                       <div class="count-area-content">
-                        <div class="count-digit">{{num_exams_active}}</div>
+                        <div class="count-digit" data-target="{{num_exams_active}}">0</div>
                         <div class="count-title">Active Exams</div>
                       </div>
                     </div>
@@ -80,13 +81,13 @@
                   <div class="row">
                     <div class="col-12">
                       <div class="count-area-content new-students">
-                        <div class="count-digit">{{num_logs}}</div>
+                        <div class="count-digit" data-target="{{num_logs}}">0</div>
                         <div class="count-title">Alerts Received</div>
                       </div>
                     </div> 
                     <div class="col-12">
                       <div class="count-area-content">
-                        <div class="count-digit">{{num_students}}</div>
+                        <div class="count-digit" data-target="{{num_students}}">0</div>
                         <div class="count-title">Total Active Students</div>
                       </div>
                     </div>
@@ -193,6 +194,36 @@
 <footer class="footer">
     <p>&copy; 2024 Cheat Detection App. All rights reserved.</p>
 </footer>
+<script>
+// Set all counters to 0 initially
+document.querySelectorAll('.count-digit').forEach(countDigit => {
+    countDigit.textContent = 0;
+});
 
+// Add hover event for dynamic counting
+document.querySelectorAll('.count-area-content').forEach(counter => {
+    counter.addEventListener('mouseover', () => {
+        const countDigit = counter.querySelector('.count-digit');
+        const target = parseInt(countDigit.getAttribute('data-target'), 10);
+        let current = 0;
+        const increment = Math.ceil(target / 100); // Adjust increment for smoother animation
+        
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                countDigit.textContent = current > target ? target : current;
+                requestAnimationFrame(updateCounter);
+            }
+        };
+        
+        if (!counter.classList.contains('animated')) { // Ensure animation runs once
+            counter.classList.add('animated');
+            updateCounter();
+        }
+    });
+});
+
+  </script>
+  
 </body>
 </html>
