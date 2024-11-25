@@ -150,9 +150,8 @@ SneakPeek/
 
 For more information or collaboration inquiries, reach out to:  
 **[Mohamed Elsayed](https://github.com/mohamedelsayed10)**
+**[Manar Ramadan](https://github.com/manarbshr)**
 
----
 
-## 📝 License  
-This project is licensed under the [MIT License](LICENSE).  
+ 
 
