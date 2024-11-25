@@ -1,166 +1,158 @@
+
 # SneakPeek  
 
-**SneakPeek** is an advanced exam monitoring and management platform designed to enhance the security and efficiency of online exams. It integrates AI-powered features to detect cheating, manage exams, and streamline the proctoring process. The platform supports various functionalities like facial detection, voice analysis, and window/tab activity monitoring, ensuring a fair exam environment.
-
-## Features  
-- **AI-Powered Monitoring**:  
-  Detects:  
-  - Multiple faces in a video feed  
-  - Eye movements and lip reading  
-  - Use of unauthorized devices or apps  
-  - Copy-paste actions or switching to unauthorized tabs  
-
-- **Student Registration with Image Verification**:  
-  Users can register with image verification to ensure identity during login.  
-
-- **Proctor Registration**:  
-  Simple and efficient registration for proctors without image verification.  
-
-- **Question Management**:  
-  - Upload files in multiple formats (PDF, Word, Excel) to generate questions.  
-  - Supports automatic grading for objective-type questions.  
-
-- **Video Storage for Review**:  
-  Saves video recordings during exams for proctors to review suspicious behavior.
-
-
-## 1. `detect_and_verify_face.py`
-### Features:
-- **Face Verification:**
-  - Uses `face_recognition` to compare a face captured from a webcam image with a stored device image.
-  - Encodes faces from both images and verifies if they match.
-### Output:
-- Returns `True` if the faces match, otherwise `False`.
-### Error Handling:
-- Includes exception handling to log errors during processing.
+**SneakPeek** is an advanced **exam monitoring and management platform** designed to enhance the security and efficiency of online exams. By integrating AI-powered features such as facial detection, voice analysis, and activity monitoring, it ensures a fair exam environment while streamlining the proctoring process.
 
 ---
 
-## 2. `eye_detection.py`
-### Features:
-- **Eye Gaze Detection:**
-  - Utilizes `mediapipe` to track eye landmarks and detect whether the user is looking away from the screen.
-- **Cheating Detection:**
-  - Flags if a user looks away from the screen for more than 2 seconds.
-  - Plays an alert sound using `winsound`.
-- **Custom Threshold:**
-  - Allows customizable detection sensitivity by adjusting the distance threshold.
+## 🌟 Features  
+
+- **AI-Powered Monitoring**  
+  - **Face Detection**: Verifies a student's identity by comparing the captured webcam image with the stored one.  
+  - **Eye Movement Detection**: Flags if the student looks away from the screen for too long, indicating potential cheating.  
+  - **Prohibited Object Detection**: Uses YOLOv5 to detect suspicious objects (e.g., phones or laptops) in the exam environment.  
+  - **Voice Detection**: Monitors for unauthorized verbal communication during exams.  
+  - **Activity Monitoring**: Detects unauthorized actions like switching tabs or copy-paste actions.
+
+- **Student Registration with Image Verification**  
+  - Ensures secure and accurate identity verification during student login using facial recognition.
+
+- **Proctor Registration**  
+  - Easy and secure proctor registration without image verification.
+
+- **Question Management**  
+  - Supports file uploads in formats like PDF, Word, and Excel for automatic question generation.  
+  - Automatically grades objective-type questions.
+
+- **Video Storage for Review**  
+  - Stores video footage of exams for review by proctors in case of suspicious behavior.
 
 ---
 
-## 3. `face_detection.py`
-### Features:
-- **Multi-Face Detection:**
-  - Detects faces in real-time using OpenCV's Haar cascade classifier.
-- **Prohibited Multi-User Detection:**
-  - Alerts (via sound and message) when more than one face is detected, ensuring a single-user presence.
-- **User Notification:**
-  - Outputs an alert message: `ALERT: You cannot sign in with others present!`
+## 🧑‍💻 Feature Breakdown
+
+### 1. `detect_and_verify_face.py`  
+- **Face Verification**:  
+  - Uses the `face_recognition` library to match the captured face with the registered face image.  
+  - Returns `True` if faces match, otherwise `False`.
+
+### 2. `eye_detection.py`  
+- **Eye Gaze Detection**:  
+  - Tracks eye movements using `mediapipe` to ensure the student is focused on the screen.  
+  - Flags if the user looks away for more than 2 seconds and triggers an alert.
+
+### 3. `face_detection.py`  
+- **Multi-Face Detection**:  
+  - Uses OpenCV’s Haar cascade classifier for detecting multiple faces in real-time.  
+  - Alerts the system if more than one face is detected, ensuring a single-user environment.
+
+### 4. `mouth_open_detection.py`  
+- **Mouth State Detection**:  
+  - Monitors the student’s mouth using `mediapipe` to check if the mouth is open, potentially indicating speaking.  
+  - Alerts the system if the mouth remains open for more than 2 seconds.
+
+### 5. `yolo_object_detection.py`  
+- **Real-Time Object Detection**:  
+  - Uses YOLOv5 to detect objects like phones or laptops during exams.  
+  - Alerts the system if suspicious objects are detected, with the option for custom alerts.
+
+### 6. `voice_detection.py`  
+- **Voice Activity Detection**:  
+  - Detects audio input from the student’s microphone to flag any voice activity.  
+  - Alerts the system if it detects unauthorized voice input.
 
 ---
 
-## 4. `mouth_open_detection.py`
-### Features:
-- **Mouth State Detection:**
-  - Uses `mediapipe` to measure the distance between the upper and lower lips to detect if the mouth is open.
-- **Speaking Detection:**
-  - Detects if the mouth remains open for more than 2 seconds, indicating potential speaking activity.
-- **Alert Mechanism:**
-  - Plays an alert sound using `winsound` when speaking is detected.
-- **Custom Threshold:**
-  - The lip distance threshold is adjustable for calibration.
-
----
-
-## 5. `yolo_object_detection.py`
-### Features:
-- **Real-Time Object Detection:**
-  - Utilizes a `YOLOv5` model (pre-trained on the COCO dataset) to detect objects in real-time.
-- **Custom Object Alert:**
-  - Flags specific "weird" objects (e.g., cell phone, laptop, book) with an alert if detected.
-- **Confidence Output:**
-  - Prints the detected object's name and confidence score.
-- **Alert Mechanism:**
-  - Plays an alert sound using `winsound` upon detecting a prohibited object.
-
----
-
-## 6. `voice_detection.py`
-### Features:
-- **Voice Activity Detection:**
-  - Uses `PyAudio` to process real-time audio streams and detect voice activity.
-- **Energy-Based Detection:**
-  - Calculates the average energy of audio input and compares it against a user-defined threshold.
-- **Custom Threshold:**
-  - The sensitivity of voice detection can be adjusted by modifying the `THRESHOLD` parameter.
-- **Real-Time Monitoring:**
-  - Continuously monitors the microphone input for voice activity and prints `Voice Detected!` when triggered.
-
-
-## Tech Stack  
+## 🔧 Tech Stack  
 
 - **AI and Machine Learning**:  
-  - TensorFlow, PyTorch, OpenCV, ,mediaPipe 
-  - YOLO for object detection
-  - Pyaudio
-  - Face_Recognition
-    
+  - TensorFlow, PyTorch, OpenCV, MediaPipe  
+  - YOLOv5 for real-time object detection  
+  - PyAudio for voice detection  
+  - Face_Recognition for facial verification
+
 - **Frontend**:  
-  - HTML, CSS, JavaScript  
+  - HTML, CSS, JavaScript
 
 - **Backend**:  
   - Python, Flask  
 
+---
 
-## Directory Structure  
+## 🗂️ Directory Structure  
 
 ```
 SneakPeek/
 ├── app/
 │   ├── static/              
-│   │   ├── css/              # CSS files  
-│   │   ├── js/               # JavaScript files  
-│   │   ├── images/           # Image assets  
-│   │   ├── fonts/            # Font files  
-│   ├── utilities_functions/            # Helper scripts for backend logic 
-│   ├── templates/            # HTML templates
-│   ├── features_scripts/     # AI/ML models for detection  
-│   ├── data/                 # Uploaded files and datasets  
-│   ├── app.py                # Main Flask app entry point  
-├── README.md                 # Project documentation  
+│   │   ├── css/            # CSS files  
+│   │   ├── js/             # JavaScript files  
+│   │   ├── images/         # Image assets  
+│   │   ├── fonts/          # Font files  
+│   ├── utilities_functions/  # Backend helper scripts  
+│   ├── templates/          # HTML templates  
+│   ├── features_scripts/   # AI/ML models for detection  
+│   ├── data/               # Uploaded files and datasets  
+│   ├── app.py              # Main Flask app  
+├── README.md               # Project documentation  
 ```
 
-## Installation  
+---
 
-1. Clone the repository:  
+## 🚀 Installation  
+
+1. **Clone the repository**:  
    ```bash
    git clone https://github.com/mohamedelsayed10/sneak-peek.git
    cd sneak-peek
    ```
 
-2. Create and activate a virtual environment:  
+2. **Create and activate a virtual environment**:  
    ```bash
    python -m venv env  
    source env/bin/activate   # For Linux/Mac  
    env\Scripts\activate      # For Windows  
    ```
 
-3. Install dependencies:  
+3. **Install dependencies**:  
    ```bash
    pip install -r requirements.txt  
    ```
 
-4. Run the app:  
+4. **Run the app**:  
    ```bash
    python app.py  
    ```
 
-5. Access the platform at `http://127.0.0.1:5000`.  
+5. **Access the platform**:  
+   Open your browser and visit `http://127.0.0.1:5000`.
 
-## Usage  
+---
 
-1. Register as a **student** or **proctor**.  
-2. Upload exam files.  
-3. Start the exam while SneakPeek monitors activities in real-time.  
-4. Review exam logs and video footage to ensure fair conduct.  
- 
+## 📝 Usage  
+
+1. **Register as a Student or Proctor**:  
+   - Students need to register with image verification.  
+   - Proctors can register without the image verification process.  
+
+2. **Upload Exam Files**:  
+   - Upload exam papers in formats like PDF, Word, or Excel for question generation.  
+
+3. **Start the Exam**:  
+   - The system will monitor students during the exam, tracking activities like face detection, eye movements, voice detection, and object presence.
+
+4. **Review Logs and Videos**:  
+   - Proctors can review recorded video footage and logs for any suspicious activity during the exam.
+
+---
+
+## 📧 Contact  
+
+For more information or collaboration inquiries, reach out to:  
+**[Mohamed Elsayed](https://github.com/mohamedelsayed10)**
+
+---
+
+## 📝 License  
+This project is licensed under the [MIT License](LICENSE).  
+
