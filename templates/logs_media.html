@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Media Viewer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/logs_media.css') }}" rel="stylesheet" />
+ 
+
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+    rel="stylesheet" />
+
+</head>
+<body>
+    <div class="hero_area">
+        <!-- header section starts -->
+        <header class="header_section">
+              <a class="navbar-brand" href="index.html">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+    
+                <span>
+                  SneakPeek
+                </span>
+              </a>
+        </header>
+    
+    <div class="side_heading">
+        <h5>
+          S
+          n
+          e
+          a
+          k
+          P
+          e
+          e
+          k
+        </h5>
+    </div>
+
+    <h1>Select Exam and Student</h1>
+
+    <select id="examDropdown" onchange="loadStudents()">
+        <option value="">Select Exam</option>
+        {% for exam in exams %}
+            <option value="{{ exam }}">{{ exam }}</option>
+        {% endfor %}
+    </select>
+
+    <select id="studentDropdown" onchange="loadMedia()" disabled>
+        <option value="">Select Student</option>
+    </select>
+
+    <div id="mediaContainer"></div>
+
+    <script>
+        video.type = "video/mp4";
+        video.controls = true;
+        video.width = 640;
+        mediaContainer.appendChild(video);
+
+        audio.type = "audio/wav";
+
+        function loadStudents() {
+            const exam = document.getElementById('examDropdown').value;
+            const studentDropdown = document.getElementById('studentDropdown');
+            studentDropdown.innerHTML = '<option value="">Select Student</option>';
+            if (exam) {
+                fetch(`/students/${exam}`)
+                    .then(response => response.json())
+                    .then(students => {
+                        students.forEach(student => {
+                            let option = document.createElement("option");
+                            option.value = student;
+                            option.text = student;
+                            studentDropdown.add(option);
+                        });
+                        studentDropdown.disabled = false;
+                    });
+            } else {
+                studentDropdown.disabled = true;
+            }
+        }
+
+        function loadMedia() {
+            const exam = document.getElementById('examDropdown').value;
+            const student = document.getElementById('studentDropdown').value;
+            const mediaContainer = document.getElementById('mediaContainer');
+            mediaContainer.innerHTML = "";
+
+            if (exam && student) {
+                fetch(`/media/${exam}/${student}`)
+                    .then(response => response.json())
+                    .then(media => {
+                        if (media.images && media.images.length > 0) {
+                            media.images.forEach(image => {
+                                let img = document.createElement("img");
+                                img.src = image;
+                                mediaContainer.appendChild(img);
+                            });
+                        }
+
+                        if (media.video) {
+                            let video = document.createElement("video");
+                            video.src = media.video;
+                            video.controls = true;
+                            video.width = 640;
+                            mediaContainer.appendChild(video);
+                        }
+
+                        if (media.audio) {
+                            let audio = document.createElement("audio");
+                            audio.src = media.audio;
+                            audio.controls = true;
+                            mediaContainer.appendChild(audio);
+                        }
+                    });
+            }
+        }
+    </script>
+
+</body>
+</html>

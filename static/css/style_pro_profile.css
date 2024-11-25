@@ -1,0 +1,295 @@
+@font-face {
+    font-family: American Typewriter;
+    src: url(../fonts/AmericanTypewriterBQ-Bold.otf);
+}
+
+:root {
+    --primary: #51b5ef !important; /* Updated primary color */
+    --light: #F0FBFC;
+    --dark: #3d4fa6 !important;
+}
+
+p {
+    color: #272727;
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    color: var(--dark) !important;
+
+    color: #0c0c0c;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+header {
+    /* background-color: var(--primary) !important; Updated to use new primary color */
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+
+.container {
+    max-width: 70% !important; /* Adjust width to leave space for  header */
+    margin: 30px auto;
+    margin-left: 18%; /* Align left border with the  header */
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* Ensures form elements are on top */
+    position: relative; /* Position relative to interact with z-index */
+}
+
+
+.profile-overview {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #05060c !important;
+    z-index: 10; /* Ensures form elements are on top */
+    position: relative; /* Position relative to interact with z-index */
+}
+
+.profile-overview img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-right: 25px;
+    
+}
+
+.profile-overview h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    z-index: 10; /* Ensures form elements are on top */
+    position: relative; /* Position relative to interact with z-index */
+    
+}
+
+.profile-overview p {
+    margin: 4px 0;
+    color: #05060c !important;
+}
+
+.our-facts {
+    margin-bottom: 30px;
+}
+
+.count-area-content {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #51b5ef !important;
+    color: #ffffff !important;
+}
+
+.count-digit {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.count-title {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+form {
+    /* width: 70%; */
+    margin-top: 30px;
+    border: 1px solid #e0e0e0;
+    padding: 25px;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    z-index: 10; /* Ensures form elements are on top */
+    position: relative; /* Position relative to interact with z-index */
+    
+}
+
+input {
+    /* width: 50%; */
+    /* height: 40px; */
+    border-radius: 20px;
+    background-color: white;
+    outline: none;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #7a7a7a;
+    padding: 10px 15px;
+    margin-bottom: 30px !important;
+}
+
+button {
+    width: 20%;
+    font-size: 13px;
+    color: #fff;
+    background-color: var(--primary) !important; /* Updated to use new primary color */
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 22px !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .3s;
+    border: none;
+    outline: none;
+    z-index: 10; /* Ensures form elements are on top */
+    position: relative; /* Position relative to interact with z-index */
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 15px 0;
+    background-color: white;
+    
+}
+
+.footer a {
+    color: var(--primary) !important; /* Updated to use new primary color */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    margin: 0;
+    color: var(--dark);
+}
+
+.start-exam,
+.stop-exam {
+    margin-top: 30px;
+}
+
+.start-exam form,
+.stop-exam form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.start-exam form button,
+.stop-exam form button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.start-exam form input,
+.stop-exam form input {
+    width: 20%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.actions a {
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.actions a button {
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.actions a button:hover {
+    background-color: var(--primary) !important; /* Updated to use new primary color */
+}
+.side_heading {
+    position: fixed;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    width: 30px; /* Adjust this width as needed */
+    text-align: center; /* Center the text horizontally */
+    z-index: 1000;
+}
+
+.side_heading h5 {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'American Typewriter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--dark); /* Adjust this to match your color scheme */
+    margin: 0;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+    
+    .navbar-brand img {
+    width: 30px;
+    margin-right: 10px;
+    }
+    
+    .navbar-brand span {
+    /* text-transform: uppercase; */
+    font-size: 22px;
+    color: #ffffff;
+    margin-top: 5px;
+    text-decoration: none;
+    
+    
+    }
+    .header_section {
+           position: fixed;
+           top: 0;
+           left: 0;
+           padding: 10px 20px;
+           z-index: 1000;
+       }
+    .hero_area::before { 
+    content: ""  ;
+    position: fixed  ;
+    top: 0  ;
+    left: 0  ;
+    width: 18%  ;
+    min-width: 150px  ;
+    height: 100%  ;
+    background: -webkit-gradient(linear, left top, right top, from(#51b5ef), to(#436bf1))  ;
+    background: linear-gradient(to right, #51b5ef, #436bf1)  ;
+    z-index: 0; /* Background gradient */
+    }

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>SneakPeek</title>
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+
+    <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" />
+
+  
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="/">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+
+            <span>
+              SneakPeek
+            </span>
+          </a>
+
+          <div class="navbar-collapse" id="">
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="contact.html">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    
+    <!-- slider section -->
+    <section class="slider_section position-relative">
+      <div class="side_heading">
+        <h5>
+          S
+          n
+          e
+          a
+          k
+          P
+          e
+          e
+          k
+        </h5>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-md-4 offset-md-1">
+            <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                  01
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                  02
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                  03
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3">
+                  04
+                </li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="img-box b-1">
+                    <img src="{{ url_for('static', filename='images/Eye icon.gif') }}" alt="" />
+
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="img-box b-2">
+                    <img src="{{ url_for('static', filename='images/Face recognition icon.jfif') }}" alt="" />
+
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="img-box b-3">
+                    <img src="{{ url_for('static', filename='images/Voice recognition free vector icons designed by monkik.jfif') }}" alt="" />
+
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="img-box b-4">
+                    <img src="{{ url_for('static', filename='images/No cell phone, turn off phone, do not use mobile phone, mobile not allowed icon in line style design isolated on white background_ Editable stroke_.jfif') }}" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel_btn-box">
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 offset-md-1">
+            <div class="detail-box">
+              <h1>
+                Sneak <br>
+                Peek
+              </h1>
+              <p>
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                alteration in some form, by injected humour, or randomised words
+              </p>
+
+              <div class="btn-box">
+                <a href="/loginAdmin" class="btn-1">
+                  Make Exam
+                </a>
+                <a href="/login" class="btn-2">
+                  Take Exam
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+
+    <!-- Testimonial Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h6 class="section-title bg-white text-center text-primary px-3">Features</h6>
+            <h1 class="mb-5">Our Detection Capabilities</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/No cell phone, turn off phone, do not use mobile phone, mobile not allowed icon in line style design isolated on white background_ Editable stroke_.jfif') }}" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Object Detection</h5>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Monitors for unauthorized objects or devices to prevent cheating during exams.</p>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/Eye icon.gif') }}"" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Eye Detection</h5>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Tracks eye movement to detect focus levels and potential distractions.</p>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/Voice recognition free vector icons designed by monkik.jfif') }}" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Sound Detection</h5>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Listens for any sounds, identifying talking or other suspicious noises.</p>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/Face recognition icon.jfif') }}" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Face Detection</h5>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Confirms identity and ensures only authorized users are present during exams.</p>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/Voice recognition free vector icons designed by monkik.jfif') }}" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Voice Detection</h5>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Detects and records any talking to capture unauthorized collaboration.</p>
+                </div>
+                
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/Voice recognition free vector icons designed by monkik.jfif') }}" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Voice Detection</h5>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Detects and records any talking to capture unauthorized collaboration.</p>
+                </div>
+                
+            </div>
+
+            <div class="testimonial-item text-center">
+                <img class="border rounded-circle p-2 mx-auto mb-3" src="{{ url_for('static', filename='images/Voice recognition free vector icons designed by monkik.jfif') }}" style="width: 80px; height: 80px;">
+                <h5 class="mb-0">Voice Detection</h5>
+                <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">Detects and records any talking to capture unauthorized collaboration.</p>
+                </div>
+                
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+  </div>
+
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+  function openNav() {
+    document.getElementById("myNav").classList.toggle("menu_width");
+    document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style");
+  }
+</script>
+
+<!-- Owl carousel script -->
+<script type="text/javascript">
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 35,
+    navText: [],
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  });
+</script>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+<!-- Template Javascript -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/style_sign.css') }}" rel="stylesheet" />
+ 
+
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+    rel="stylesheet" />
+
+</head>
+<body>
+    <div class="hero_area">
+        <!-- header section starts -->
+        <header class="header_section">
+              <a class="navbar-brand" href="index.html">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+    
+                <span>
+                  SneakPeek
+                </span>
+              </a>
+        </header>
+    
+    <div class="side_heading">
+        <h5>
+          S
+          n
+          e
+          a
+          k
+          P
+          e
+          e
+          k
+        </h5>
+    </div>
+    <form action="/register" method="post" id="registerForm">
+
+        <h2>Register</h2>
+        <label for="id">ID:</label>
+        <input type="text" name="id" id="id" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        
+        <video id="video" autoplay></video>
+        <button type="button" id="captureButton">Take Photo</button>
+        
+        <input type="submit" value="Register">
+        <input type="hidden" name="capturedImage" id="capturedImage"> <!-- Hidden input to store image data -->
+    </form>
+
+    <script>
+        const video = document.getElementById('video');
+        const captureButton = document.getElementById('captureButton');
+        const hiddenInput = document.getElementById('capturedImage');
+
+        // Access the user's webcam
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error("Error accessing webcam: ", err);
+            });
+
+       // Capture the image when the button is clicked
+captureButton.addEventListener('click', () => {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    context.drawImage(video, 0, 0);
+    const imageData = canvas.toDataURL('image/png');
+
+    // Hide the video and store image data in hidden input
+    hiddenInput.value = imageData;  // Store the image data in the hidden input
+});
+
+    </script>
+</body>
+</html>

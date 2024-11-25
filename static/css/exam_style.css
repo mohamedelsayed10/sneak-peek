@@ -1,0 +1,116 @@
+@font-face {
+    font-family: American Typewriter;
+    src: url(../fonts/AmericanTypewriterBQ-Bold.otf);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+h1 {
+    color: #333;
+    margin-top: 20px;
+}
+
+.header_section {
+       
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 1000;
+}
+.navbar-brand {
+    font-family: 'American Typewriter', sans-serif;
+    color: #ffffff;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.navbar-brand img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.hero_area::before { 
+    content: ""  ;
+    position: fixed  ;
+    top: 0  ;
+    left: 0  ;
+    width: 18%  ;
+    min-width: 150px  ;
+    height: 100%  ;
+    background: -webkit-gradient(linear, left top, right top, from(#51b5ef), to(#436bf1))  ;
+    background: linear-gradient(to right, #51b5ef, #436bf1)  ;
+    z-index: 0; /* Background gradient */
+    }
+.side_heading {
+    position: fixed;
+top: 45%;
+right: 25px;
+-webkit-transform: translateY(-50%);
+     transform: translateY(-50%);
+     z-index: 1000;
+}
+
+   .side_heading h5 {
+-webkit-writing-mode: tb-rl;
+ -ms-writing-mode: tb-rl;
+     writing-mode: tb-rl;
+text-orientation: upright;
+font-family: 'American Typewriter', sans-serif ;
+font-weight: 400;
+font-size: 20px;
+}
+.navbar-brand, 
+.side_heading h5, 
+.slider_section .carousel-indicators, 
+.slider_section .detail-box h1 {
+font-family: 'American Typewriter', sans-serif ;
+font-weight: 400;
+text-decoration: none;
+}
+
+
+.question-section {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.options {
+    margin-left: 20px;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #51b5ef;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #436bf1;
+}

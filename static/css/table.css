@@ -1,0 +1,212 @@
+@font-face {
+    font-family: American Typewriter;
+    src: url(../fonts/AmericanTypewriterBQ-Bold.otf);
+  }
+/* Base Styles */
+body {
+    font-family: 'American Typewriter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+.header_section {
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 1000;
+    /* background-color: #007BFF; */
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'American Typewriter', sans-serif;
+}
+
+.navbar-brand img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.navbar-brand span {
+    font-size: 22px;
+    color: #ffffff;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+/* Side Heading */
+.side_heading {
+    position: fixed;
+    top: 45%;
+    right: 25px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.side_heading h5 {
+    -webkit-writing-mode: tb-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: tb-rl;
+    text-orientation: upright;
+    font-family: 'American Typewriter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Main Content Styling */
+.main-content {
+    max-width: 85%;
+    margin-left:10%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Form Styles */
+form {
+    margin: 20px 0;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+    border: 1px solid #007BFF;
+    border-radius: 4px;
+}
+
+button {
+    background-color: white;
+    color: #007BFF;
+    padding: 10px 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 2px solid #007BFF;
+    border-radius: 4px;
+}
+
+/* Table Styles */
+table {
+    width: 80%;
+    max-width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-right: 60px;
+    height: 100%;
+}
+
+th {
+    padding: 8px;
+    background-color: #007BFF;
+    color: white;
+    border-bottom: 2px solid #ddd; /* Horizontal divider */
+}
+
+td {
+    padding: 8px;
+    border-left: 1px solid #ddd; /* Vertical dividers */
+}
+
+td:first-child {
+    border-left: none; /* Remove left border from the first column */
+}
+
+/* Row Hover */
+
+tr:nth-child(odd) {
+    background-color: #b4abab48;
+}
+
+/* Row Hover and Zoom Effect */
+tr:hover {
+    background-color: #9fafc0; /* Background color on hover */
+    transform: scale(1.10); /* Slight zoom effect */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Smooth zoom effect */
+tr {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+/* Message Styling */
+.message {
+    color: #007BFF;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+
+.hero_area::before { 
+    content: ""  ;
+    position: fixed  ;
+    top: 0  ;
+    left: 0  ;
+    width: 18%  ;
+    min-width: 150px  ;
+    height: 100%  ;
+    background: -webkit-gradient(linear, left top, right top, from(#51b5ef), to(#436bf1))  ;
+    background: linear-gradient(to right, #51b5ef, #436bf1)  ;
+    z-index: 0; /* Background gradient */
+    }
+
+
+.h2,h3,h4,h5,h6 {
+    font-family: 'American Typewriter', sans-serif !important;
+}
+
+
+
+
+#pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#pagination button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+#pagination button:hover {
+    background-color: #0056b3;
+}
+
+#pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#pageNumber {
+    font-weight: bold;
+}

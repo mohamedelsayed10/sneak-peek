@@ -1,0 +1,197 @@
+@font-face {
+font-family: American Typewriter;
+src: url(../fonts/AmericanTypewriterBQ-Bold.otf);
+}
+
+   
+   body {
+       font-family: 'Poppins', sans-serif ;
+       background-color: #f0f0f0;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+       margin: 0;
+   }
+
+   h2 {
+       color: #333;
+       margin-bottom: 20px;
+   }
+
+   form {
+       background-color: #fff;
+       padding: 20px;
+       border-radius: 8px;
+       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+       width: 300px;
+       text-align: center;
+   }
+
+   form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+}
+
+   label {
+       display: block;
+       margin-bottom: 5px;
+       color: #555;
+   }
+
+   input[type="text"], 
+   input[type="password"] {
+       border-radius: 20px;
+background-color: white;
+outline: none;
+border: 1px solid #ccc;
+box-shadow: none;
+font-size: 13px;
+font-weight: 500;
+color: #7a7a7a;
+padding: 10px 15px;
+margin-bottom: 30px  ;
+   }
+
+   input[type="submit"] {
+       background-color: #51b5ef;
+       color: white;
+       padding: 10px;
+       border: none;
+       border-radius: 20px;
+       cursor: pointer;
+       width: 100%;
+   }
+
+   input[type="submit"]:hover {
+       background-color: #51b5ef;
+   }
+
+   button {
+       background-color: #51b5ef;
+       color: white;
+       padding: 10px;
+       border: none;
+       border-radius: 20px;
+       cursor: pointer;
+       margin-top: 10px;
+   }
+
+   button:hover {
+       background-color: #51b5ef;
+       
+   }
+   .side_heading {
+    position: fixed;
+top: 45%;
+right: 25px;
+-webkit-transform: translateY(-50%);
+     transform: translateY(-50%);
+     z-index: 1000;
+}
+
+   .side_heading h5 {
+-webkit-writing-mode: tb-rl;
+ -ms-writing-mode: tb-rl;
+     writing-mode: tb-rl;
+text-orientation: upright;
+font-family: 'American Typewriter', sans-serif ;
+font-weight: 400;
+font-size: 20px;
+}
+.navbar-brand, 
+.side_heading h5, 
+.slider_section .carousel-indicators, 
+.slider_section .detail-box h1 {
+font-family: 'American Typewriter', sans-serif ;
+font-weight: 400;
+text-decoration: none;
+}
+
+.navbar-brand img {
+width: 30px;
+margin-right: 10px;
+}
+
+.navbar-brand span {
+/* text-transform: uppercase; */
+font-size: 22px;
+color: #ffffff;
+margin-top: 5px;
+text-decoration: none;
+
+
+}
+.header_section {
+       
+       top: 0;
+       left: 0;
+       padding: 10px 20px;
+       position: fixed;
+       z-index: 1000;
+   }
+.hero_area::before { 
+content: ""  ;
+position: absolute  ;
+top: 0  ;
+left: 0  ;
+width: 18%  ;
+min-width: 150px  ;
+height: 100%  ;
+background: -webkit-gradient(linear, left top, right top, from(#51b5ef), to(#436bf1))  ;
+background: linear-gradient(to right, #51b5ef, #436bf1)  ;
+}
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link img {
+width: 22px  ;
+margin-right: 15px  ;
+}
+
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+padding: 0px 25px  ;
+color: #fefeff  ;
+text-align: center  ;
+
+}
+
+
+/* video {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+} */
+
+canvas {
+    display: none;
+}
+
+
+/* Video player */
+video {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Add subtle animation for smooth appearance */
+form, .register-link {
+    animation: fadeInUp 0.6s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.register-link {
+    margin-top: 10px;
+}

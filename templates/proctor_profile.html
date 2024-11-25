@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proctor Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_pro_profile.css') }}">
+      <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+      <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+  rel="stylesheet" />
+ 
+  
+</head>
+<body>
+
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section">
+          <a class="navbar-brand" href="index.html">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+
+            <span>
+              SneakPeek
+            </span>
+          </a>
+    </header>
+
+<div class="side_heading">
+    <h5>
+      S
+      n
+      e
+      a
+      k
+      P
+      e
+      e
+      k
+    </h5>
+</div>
+
+<div class="container">
+    <div class="profile-overview">
+        <div>
+          <p>Your Admin ID is: <strong>{{ id }}</strong></p>
+          <p>Your Name is: <strong>{{ name }}</strong></p>
+          <p>Your Email is: <strong>{{ email }}</strong></p>
+          <p>Your Phone is: <strong>{{ phone }}</strong></p>
+        </div>
+    </div>
+
+
+    <section class="our-facts">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-lg-12">
+                  <h2>A Few Facts About Exam Management</h2>
+                </div>
+                <div class="col-lg-6">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="count-area-content percentage">
+                        <div class="count-digit">{{num_exams}}</div>
+                        <div class="count-title">Total Exams Conducted</div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="count-area-content">
+                        <div class="count-digit">{{num_exams_active}}</div>
+                        <div class="count-title">Active Exams</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="count-area-content new-students">
+                        <div class="count-digit">{{num_logs}}</div>
+                        <div class="count-title">Alerts Received</div>
+                      </div>
+                    </div> 
+                    <div class="col-12">
+                      <div class="count-area-content">
+                        <div class="count-digit">{{num_students}}</div>
+                        <div class="count-title">Total Active Students</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>       
+            <div class="col-lg-6 align-self-center">
+                <div class="video">
+                    <img src="{{ url_for('static', filename='images/Free Vector _ Sentiment analysis concept illustration.jpeg') }}" width="400" height="450" alt="" />
+                </div>
+              </div>     
+          </div>
+        </div>
+      </section>
+
+  
+
+
+    <form method="POST" enctype="multipart/form-data">
+        
+        <div class="row">
+          <div class="col-lg-12">
+            <h3>Add Exam</h3>
+          </div>
+          <div class="col-lg-6">
+            <fieldset>
+                <input type="text" id="exam_id" name="exam_id" required placeholder="Exam ID">
+
+            </fieldset>
+          </div>
+          <div class="col-lg-6">
+            <fieldset>
+                <input type="text" id="exam_name" name="exam_name" required placeholder="Exam Name">
+          </fieldset>
+          </div>
+          <div class="col-lg-6">
+            <fieldset>
+                <input type="date" id="exam_date" name="exam_date" required placeholder="Exam Date">
+            </fieldset>
+          </div>
+          <div class="col-lg-6">
+            <fieldset>
+                <input type="time" id="exam_time" name="exam_time" required placeholder="Exam Time">
+            </fieldset>
+          </div>
+          <div class="col-lg-6">
+            <fieldset>
+                <input type="text" id="teacher_id" name="teacher_id" required placeholder="Teacher ID">
+            </fieldset>
+          </div>
+          <div class="col-lg-12">
+            <fieldset>
+                <input type="file" id="exam_file" name="exam_file" accept=".pdf,.docx,.xlsx,.pptx" required>
+            </fieldset>
+          </div>
+          <div class="col-lg-12">
+            <fieldset>
+                <input type="checkbox" id="active" name="active" value="true"> Active
+            </fieldset>
+          </div>
+          <div class="col-lg-12">
+            <fieldset>
+                <button type="submit">Upload Exam</button>
+            </fieldset>
+          </div>
+        </div>
+      </form>
+
+    <div class="start-exam">
+        <h3>Start Exam</h3>
+        <form action="/start_exam" method="POST">
+            <label for="exam_id">Exam ID:</label>
+            <input type="text" name="exam_id" required>
+            <button type="submit">Start Exam</button>
+        </form>
+    </div>
+
+    <div class="stop-exam">
+        <h3>Stop Exam</h3>
+        <form action="/stop_exam" method="POST">
+            <label for="exam_id">Exam ID:</label>
+            <input type="text" name="exam_id" required>
+            <button type="submit">Stop Exam</button>
+        </form>
+    </div>
+
+    <div class="actions">
+        <a href="/show_grades">
+            <button>Show Grades</button>
+        </a>
+        <a href="/show_logs">
+            <button>Show Logs</button>
+        </a>
+        <a href="/ongoing_exams">
+            <button>Show Ongoing Exams</button>
+        </a>
+        <a href="/logs_media">
+          <button>Show logs for each student</button>
+      </a>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2024 Cheat Detection App. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

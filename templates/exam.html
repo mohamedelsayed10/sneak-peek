@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam</title>
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/exam_style.css') }}" rel="stylesheet" />
+ 
+
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap"
+    rel="stylesheet" />
+</head>
+<body>
+    <div class="hero_area">
+        <!-- header section starts -->
+        <header class="header_section">
+              <a class="navbar-brand" href="index.html">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+    
+                <span>
+                  SneakPeek
+                </span>
+              </a>
+        </header>
+    
+    <div class="side_heading">
+        <h5>
+          S
+          n
+          e
+          a
+          k
+          P
+          e
+          e
+          k
+        </h5>
+    </div>
+    
+    <div class="question-section">
+        <h1>Exam</h1>
+        <form action="{{ url_for('submit_exam', exam_id=request.view_args['exam_id']) }}" method="POST">
+            {% for i, question in enumerate(questions) %}
+            <div class="question">
+                <p><strong>{{ i+1 }}. {{ question['question'] }}</strong></p>
+                <div class="options">
+                    <input type="radio" name="question-{{ i }}" value="A"> {{ question['options']['A'] }}<br>
+                    <input type="radio" name="question-{{ i }}" value="B"> {{ question['options']['B'] }}<br>
+                    <input type="radio" name="question-{{ i }}" value="C"> {{ question['options']['C'] }}<br>
+                    <input type="radio" name="question-{{ i }}" value="D"> {{ question['options']['D'] }}<br>
+                </div>
+            </div>
+            {% endfor %}
+            <button type="submit">Submit Exam</button>
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Logs Lookup</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/table.css') }}" rel="stylesheet" />
+
+    <!-- Fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700|Raleway:400,700&display=swap" rel="stylesheet" />
+    <script src="{{ url_for('static', filename='js/pagination.js') }}"></script>
+
+
+</head>
+<body>
+    <div class="hero_area">
+        <!-- Header section starts -->
+        <header class="header_section">
+            <a class="navbar-brand" href="index.html">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" />
+                <span>
+                  SneakPeek
+                </span>
+            </a>
+        </header>
+
+        <!-- Side header -->
+        <div class="side_heading">
+            <h5>
+                S
+                n
+                e
+                a
+                k
+                P
+                e
+                e
+                k
+              </h5>
+        </div>
+    <div class="main-content">
+        <h1>Cheat Detection App</h1>
+        <h3>Exam Logs Lookup</h3>
+
+        <form method="POST">
+            <label for="exam_id">Enter Exam ID:</label>
+            <input type="text" id="exam_id" name="exam_id" required>
+            <button type="submit">Show logs</button>
+        </form>
+        
+        <div>
+            <br>
+        </div>
+
+        {% if message %}
+            <div class="message">{{ message }}</div>
+        {% endif %}
+
+        {% if logs %}
+            <table>
+                <tr>
+                    <th>Log</th>
+                    <th>Time</th>
+                    <th>Student ID</th>
+                    <th>Exam ID</th>
+                </tr>
+                {% for log in logs %}
+                    <tr>
+                        <td>{{ log['log'] }}</td>
+                        <td>{{ log['time'] }}</td>
+                        <td>{{ log['student_id'] }}</td>
+                        <td>{{ log['exam_id'] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    </div>
+    <!-- Pagination Controls -->
+<div id="pagination">
+    <button onclick="prevPage()" id="prevBtn">Previous</button>
+    <span id="pageNumber">1</span>
+    <button onclick="nextPage()" id="nextBtn">Next</button>
+</div>
+</body>
+</html>

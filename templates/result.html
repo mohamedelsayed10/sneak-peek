@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        button {
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #videoElement {
+            width: 640px;
+            height: 480px;
+            display: none;
+            margin-top: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+
+        #result-message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Alert styling */
+        .alert {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>{{ message }}</h1>
+
+    <!-- Conditional Try Again Button -->
+    {% if "Failed" in message %}
+        <button onclick="window.location.href='/login'">Try Again</button>
+    {% endif %}
+
+    <video id="videoElement" autoplay></video>
+    
+    <div id="result-message"></div>
+
+    <!-- Alert Sound -->
+    <audio id="alert-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3" preload="auto"></audio>
+
+    <script>
+        const videoElement = document.getElementById('videoElement');
+        const resultMessage = document.getElementById('result-message');
+        const alertSound = document.getElementById('alert-sound');
+
+        // If the verification is successful, hide the video element
+        if ("{{ message }}" !== "Verification Successful!") {
+            videoElement.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
