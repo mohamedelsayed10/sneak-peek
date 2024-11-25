@@ -23,7 +23,7 @@
 - **Video Storage for Review**:  
   Saves video recordings during exams for proctors to review suspicious behavior.
 
-  # Face and Activity Detection Scripts
+  ## Face and Activity Detection Scripts
 
 ## 1. `detect_and_verify_face.py`
 ### Features:
